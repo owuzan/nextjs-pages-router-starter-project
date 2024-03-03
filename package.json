@@ -1,7 +1,12 @@
 {
-  "name": "nextjs-pages-starter",
-  "version": "0.1.0",
+  "name": "nextjs-pages-router-starter-project",
+  "version": "1.0.0",
   "private": false,
+  "author": {
+    "name": "Oğuzhan Yılmaz",
+    "email": "me@oguzhan.dev",
+    "url": "https://oguzhan.dev"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
