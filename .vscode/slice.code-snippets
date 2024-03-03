@@ -1,0 +1,22 @@
+{
+  "Create redux toolkit slice": {
+    "prefix": "slice",
+    "body": [
+      "import {createSlice} from '@reduxjs/toolkit';",
+      "",
+      "export type ${1:Example}State = {};",
+      "",
+      "const initial${1:Example}State: ${1:Example}State = {};",
+      "",
+      "export const ${2:example}Slice = createSlice({",
+      "	name: '${2:example}State',",
+      "	initialState: initial${1:Example}State,",
+      "	reducers: {},",
+      "});",
+      "",
+      "export const {} = ${2:example}Slice.actions;",
+      "",
+      "export default ${2:example}Slice.reducer;"
+    ]
+  }
+}

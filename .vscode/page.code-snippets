@@ -1,0 +1,18 @@
+{
+  "Page": {
+    "prefix": "page",
+    "body": [
+      "import React from \"react\";",
+      "import { NextPage } from \"next\";",
+      "import Page from \"@/components/Page\";",
+      "",
+      "type ${1:${TM_FILENAME_BASE}}PageProps = {};",
+      "",
+      "const ${1:${TM_FILENAME_BASE}}Page: NextPage<${1:${TM_FILENAME_BASE}}PageProps> = (props) => {",
+      "  return <Page>${1:${TM_FILENAME_BASE}}Page</Page>;",
+      "};",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}Page;"
+    ]
+  }
+}

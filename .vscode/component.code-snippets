@@ -1,0 +1,16 @@
+{
+  "Component": {
+    "prefix": "component",
+    "body": [
+      "import React, { FC } from \"react\";",
+      "",
+      "type ${1:${TM_FILENAME_BASE}}Props = {};",
+      "",
+      "const ${1:${TM_FILENAME_BASE}}: FC<${1:${TM_FILENAME_BASE}}Props> = (props) => {",
+      "  return <div>${1:${TM_FILENAME_BASE}}</div>;",
+      "};",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}};"
+    ]
+  }
+}
