@@ -18,6 +18,14 @@ export const appConfig = {
    */
   description: "Start your next project with this boilerplate.",
   /**
+   * `appUrl` is the URL of the application. It is used in the `Page` component to create the canonical URL.
+   */
+  appUrl: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
+  /**
+   * `apiUrl` is the URL of the API. It is used in the `axios` instance to make requests to the API.
+   */
+  apiUrl: process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000/api",
+  /**
    * `isProductionEnvironment` indicates whether this application is in production environment, where everyone uses it.
    */
   isProductionEnvironment: process.env.NEXT_PUBLIC_ENVIRONMENT === "production",

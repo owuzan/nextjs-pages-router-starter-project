@@ -32,6 +32,14 @@ type PageProps = {
    */
   className?: string;
   /**
+   * `canonicalUrl` is the URL of the page. It is used in the `Page` component to create the canonical URL.
+   */
+  canonicalUrl?: string;
+  /**
+   * `canonicalUrlWithAppUrl` is the URL of the page. It is used in the `Page` component to create the canonical URL.
+   */
+  canonicalUrlWithAppUrl?: boolean;
+  /**
    * The children of the page
    */
   children?: React.ReactNode;
@@ -45,6 +53,8 @@ const Page: FC<PageProps> = (props) => {
     redirect = routes.home,
     noIndex = false,
     className,
+    canonicalUrl,
+    canonicalUrlWithAppUrl = false,
     children,
   } = props;
   const router = useRouter();
@@ -57,6 +67,12 @@ const Page: FC<PageProps> = (props) => {
     }
     return [title.trim(), titleSeperator, appConfig.name].join(" ");
   }, [title]);
+
+  const canonicalUrlContent = useMemo(() => {
+    if (!canonicalUrl) return;
+    if (canonicalUrlWithAppUrl) return `${appConfig.appUrl}${canonicalUrl}`;
+    return canonicalUrl;
+  }, [canonicalUrl, canonicalUrlWithAppUrl]);
 
   const robotsContent = useMemo((): string => {
     if (!appConfig.isProduction) return "noindex, nofollow";
@@ -92,6 +108,9 @@ const Page: FC<PageProps> = (props) => {
         <title>{titleText}</title>
         <meta name="description" content={metaDescriptionContent} />
         <meta name="robots" content={robotsContent} />
+        {!!canonicalUrlContent && (
+          <link rel="canonical" href={canonicalUrlContent} />
+        )}
       </Head>
       {children}
     </div>
