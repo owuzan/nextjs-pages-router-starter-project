@@ -1,7 +1,7 @@
 /**
  * `SuccessResponseType` is the success response type of the API.
  */
-type SuccessResponseType<T> = {
+export type SuccessResponseType<T> = {
   /**
    * `success` indicates whether the request is successful.
    */
@@ -19,7 +19,7 @@ type SuccessResponseType<T> = {
 /**
  * `ErrorResponseType` is the error response type of the API.
  */
-type ErrorResponseType = {
+export type ErrorResponseType = {
   /**
    * `success` indicates whether the request is successful.
    */
